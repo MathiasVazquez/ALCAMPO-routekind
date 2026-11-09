@@ -1,0 +1,31 @@
+// app global css in SCSS form
+
+// FOR ALL ITEMS
+.basic-item-selected,
+.basic-item {
+  /*margin: 4px 22px;*/
+  padding: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  background-color: white;
+}
+// FOR ALL ITEMS
+.basic-item-selected {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 6px 2px #0000000a;
+}
+.basic-item-outline {
+  border:1px solid #e2e2e2;
+}
+
+// LEAFLET
+.leaflet-tooltip {
+  padding: 0 !important;
+  border: 0 !important;
+  background-color: transparent;
+}
+.leaflet-container {
+  font: none !important;
+}

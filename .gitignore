@@ -1,0 +1,3 @@
+.envs/
+*.jks*
+routekind-back-main/routekind-back-main/kind/customauth/utils/crypt.py

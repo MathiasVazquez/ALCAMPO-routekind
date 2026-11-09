@@ -1,0 +1,91 @@
+// app global css in SCSS form
+
+// FOR ALL ITEMS
+.basic-item-selected,
+.basic-item {
+  margin: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+  background-color: white;
+  transition: transform 0.3s;
+}
+// FOR ALL ITEMS
+.basic-item-selected {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 6px 2px #0000000a;
+}
+// FOR SLICED ITEMS
+.basic-item-selected-slice {
+  position: relative;
+  padding-left: 12px;
+  transform: translateX(10px);
+}
+
+.stacked-basic-item {
+  padding: 12px;
+  overflow: hidden;
+  text-align: left;
+  background-color: white;
+  transition: all 0.3s;
+}
+.stacked-basic-item-selected {
+  background-color: #ccc;
+}
+/*.basic-item-selected::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #{$primary};
+  z-index: 10;
+}*/
+
+.page-container {
+  margin: 24px 15%;
+}
+
+.page-section-item {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin: 16px 0;
+  transition: 0.25s;
+}
+
+.page-section-item:hover {
+  box-shadow: 0 3px 9px 4px #0000000f;
+  transform: scale(1.0075);
+}
+
+.leaflet-tooltip {
+  padding: 0 !important;
+  border: 0 !important;
+  background-color: transparent;
+}
+
+.leaflet-tooltip-round .leaflet-tooltip {
+  border-radius: 200px !important;
+}
+
+.grow-1 {
+  flex-grow: 1;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.text-caption {
+  line-height: 0.8rem;
+}
+
+.leaflet-tooltip {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  pointer-events: all !important;
+}

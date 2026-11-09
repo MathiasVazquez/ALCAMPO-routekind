@@ -1,0 +1,50 @@
+{
+  "name": "kindpanel",
+  "version": "1.2.5",
+  "description": "Rount Kind Panel",
+  "productName": "RouteKind",
+  "author": "luismezaf <dmc.luisalfredo@gmail.com>",
+  "private": true,
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0",
+    "postinstall": "patch-package",
+    "dev": "quasar dev",
+    "build": "quasar build"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.14.0",
+    "@vue-leaflet/vue-leaflet": "^0.6.1",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "leaflet": "^1.7.1",
+    "leaflet.markercluster": "^1.5.3",
+    "moment": "^2.29.3",
+    "quasar": "^2.0.0",
+    "randomcolor": "^0.6.2",
+    "vuedraggable": "^4.1.0",
+    "vuex": "^4.0.1"
+  },
+  "devDependencies": {
+    "@quasar/app": "^3.0.0",
+    "electron": "^16.0.4",
+    "electron-packager": "^15.2.0",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

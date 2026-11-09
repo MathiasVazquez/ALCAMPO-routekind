@@ -1,0 +1,54 @@
+<template>
+    <q-list v-if="avaibleMobiles.length > 0">
+        <q-item v-for="mobile of avaibleMobiles" :key="mobile.id"
+            clickable class="q-pa-md column"
+            @click="$emit('select', mobile)"
+        >
+            <q-item-section>
+                <q-item-label>{{mobile.name}}</q-item-label>
+            </q-item-section>
+        </q-item>
+    </q-list>
+    <q-item v-else style="max-width:300px" class="bg-grey-2">
+        <q-item-section>
+            <q-item-label>No quedan móviles disponibles para asignar</q-item-label>
+            <q-item-label caption>Al parecer, todos los móviles ya están asignados, pero siempre puedes crear un nuevo móvil.</q-item-label>
+        </q-item-section>
+    </q-item>
+</template>
+
+<script>
+import { computed, ref } from 'vue';
+import EmptyListFace from 'src/components/includes/EmptyListFace'
+import CreateUserModal from 'src/components/mobileUser/CreateUserModal'
+import { useMobiles, useUsers } from 'src/context'
+
+export default {
+    components: {EmptyListFace, CreateUserModal},
+    emits: ['select'],
+    setup(props, { emit }) {
+        const showCreateUserModal = ref(false)
+        const { mobiles, selectedMobile, updateMobile } = useMobiles()
+
+        const { users, getUserById } = useUsers()
+
+        const user = computed(() => getUserById(selectedMobile.value?.user))
+        const avaibleUsers = computed(() => users.value.filter(u => !mobiles.value.some(m => m.user == u.id)))
+        const avaibleMobiles = computed(() => mobiles.value.filter(m => !m.user))
+
+        const handleAssignUser = user => emit('select', user)
+        
+        //async user => await updateMobile({ id: selectedMobile.value.id, user: user?.id || null })
+
+        return {
+            user,
+            users,
+            avaibleUsers,
+            selectedMobile,
+            avaibleMobiles,
+            showCreateUserModal,
+            handleAssignUser,
+        }
+    },
+}
+</script>
